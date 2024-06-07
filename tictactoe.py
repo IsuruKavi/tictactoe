@@ -14,7 +14,11 @@ def printBoard(board):
     print("")
     print(board[6]," | ",board[7]," | ",board[8])
 
-printBoard(board)
+def checkTie(board):
+    global isGameRunning
+    if "-" not in board:   
+        print("It is a tie")
+        isGameRunning=False
 
 #take the player input
 def playerInput(board):
@@ -48,6 +52,7 @@ def checkForWinner(winnerArray):
 while isGameRunning:
     playerInput(board)
     printBoard(board)
+    checkTie(board)
     checkForWinner(winnerArray)        
 #check for winner
 
